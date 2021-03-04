@@ -176,32 +176,15 @@ namespace ChessWithCohorts.Controllers
         }
 
 
-        public IActionResult IndexJson()
+        [HttpGet("create/board")]
+        public IActionResult CreateBoard()
         {
-            ChessBoard board = new ChessBoard();
-            King WKing = new King(true);
-            WKing.CurrentLocation = board.Squares[3,3];
-            IEnumerable<Move> MoveSet = WKing.GetValidMoves(board);
-            int i = 0;
-            Move MyMove = new Move();
-            foreach (Move m in MoveSet)
-            {
-                i++;
-                if(i == 3)
-                {
-                    board.MoveChessPiece(WKing, m);
-                    // WKing.CurrentLocation = m.EndingLocation;
-                    MyMove = m;
-                }
-            }
-            var game = new {
-                pieces = WKing,
-                moves = MoveSet,
-                mymove = MyMove,
-                board = board,
+            ChessBoard NewBoard = new ChessBoard();
+            var result = new {
+                board = NewBoard
             };
-
-            return Json(game);
+            // Console.WriteLine($"{NewBoard.BoardSquares[0,3].Location.File}, {NewBoard.BoardSquares[0,3].Location.Rank}\n{NewBoard.BoardSquares[1,3].Location.File}, {NewBoard.BoardSquares[1,3].Location.Rank}");
+            return Json(result);
         }
 
         public IActionResult Privacy()

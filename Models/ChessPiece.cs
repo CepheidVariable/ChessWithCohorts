@@ -3,18 +3,27 @@ using System;
 
 namespace ChessWithCohorts.Models
 {
-    public abstract class ChessPiece : IChessPiece
+    public abstract class ChessPiece : IMovable
     {
-        private Square _currentLocation;
-        public Square CurrentLocation
+        public ChessPieceType Type {get; protected set;}
+        public PieceColor Color {get; protected set;}
+        public Square CurrentSquare {get; set;}
+        public bool IsDestroyed {get; set;} = false;
+
+        public ChessPiece(PieceColor color)
         {
-            get => _currentLocation;
-            set => _currentLocation = value ?? throw new ArgumentNullException();
+            this.Color = color;
         }
 
-        public abstract string Type {get; set;}
-        public abstract bool IsWhite {get; set;}
-        public abstract bool IsDestroyed {get; set;}
-        public abstract IEnumerable<Move> GetValidMoves(ChessBoard board);
+        public virtual List<Location> GetValidMoves(ChessBoard board) {return null;}
+
+        public virtual List<Location> GetValidMoves(ChessBoard board, Square square) {return null;}
+
+        public void MakeMove(Square newSquare)
+        {
+            Square current = this.CurrentSquare;
+            this.CurrentSquare = newSquare;
+            current.Reset();
+        }
     }
 }
