@@ -99,3 +99,31 @@ C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\ob
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\ChessWithCohorts.pdb
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\ChessWithCohorts.genruntimeconfig.cache
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\LoginPage.cshtml.g.cs
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\LoginPage.cshtml.g.cs
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\Tutorial.cshtml.g.cs
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Login.cshtml.g.cs
+D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Register.cshtml.g.cs

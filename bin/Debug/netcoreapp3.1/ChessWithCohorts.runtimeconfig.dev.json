@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\wadle\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\wadle\\.nuget\\packages"
+      "d:\\Users\\Cepheid Variable\\.dotnet\\store\\|arch|\\|tfm|",
+      "d:\\Users\\Cepheid Variable\\.nuget\\packages"
     ]
   }
 }

@@ -187,6 +187,40 @@ namespace ChessWithCohorts.Controllers
             return Json(result);
         }
 
+
+        [HttpGet("tutorial")]
+        public IActionResult Tutorial()
+        {
+            return View();
+        }
+
+
+        public IActionResult TestJson()
+        {
+            ChessBoard NewBoard = new ChessBoard();
+            Pawn NewPawn = new Pawn(PieceColor.WHITE);
+            Pawn BlackPawn = new Pawn(PieceColor.BLACK);
+            Rook WRook = new Rook(PieceColor.WHITE);
+            WRook.CurrentSquare = NewBoard.BoardSquares[4,4];
+            NewBoard.BoardSquares[5,4].CurrentPiece = NewPawn;
+            NewBoard.BoardSquares[5,4].IsOccupied = true;
+
+
+            NewBoard.BoardSquares[4,3].CurrentPiece = BlackPawn;
+            NewBoard.BoardSquares[4,3].IsOccupied = true;
+            List<Location> RookMoves = WRook.GetValidMoves(NewBoard);
+
+            var result = new{
+                whitePawn = NewPawn,
+                blackPawn = BlackPawn,
+                whiterook = WRook,
+                rookmoves = RookMoves,
+            };
+            return Json(result);
+        }
+
+
+
         public IActionResult Privacy()
         {
             return View();
