@@ -8,7 +8,7 @@ namespace ChessWithCohorts.Models
         public SquareColor Color {get; private set;}
         public Location Location {get; private set;}
         public ChessPiece CurrentPiece {get; set;} = null;
-        public bool isOccupied {get; private set;} = false;
+        public bool IsOccupied {get; set;} = false;
 
 
         public Square(Location location, SquareColor color)
@@ -19,7 +19,7 @@ namespace ChessWithCohorts.Models
 
         public void Reset()
         {
-            this.isOccupied = false;
+            this.IsOccupied = false;
             this.CurrentPiece = null;
         }
     }
