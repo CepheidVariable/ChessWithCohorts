@@ -2,17 +2,33 @@
     ViewData["Title"] = "Home Page";
 }
 @model King
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>@Model.IsDestroyed</p>
+<div class="d-flex flex-column align-items-center">
+    <h1 class="display-4 text-center">Welcome</h1>
+    <a id="CreateBoard" class="btn btn-dark col-2">Create Board</a>
+    <div id="Board" class="d-flex flex-wrap mt-4"></div>
 </div>
 
 @section Scripts{
     <script>
-        if (document.readyState === 'complete') {
+        $(document).ready(function() {
             // The page is fully loaded
-            
-        }
+            $(document).on( "click", "#CreateBoard", function() {
+                $.get("@Url.Action("CreateBoard")",null, function (data) {
+                    var board = data.board;
+                    console.log(board.size);
+                    console.log(board.boardSquares.length);
 
+                    for(i=0; i<board.boardSquares.length;i++)
+                    {
+                        $("#Board").append("<div id='R#F" + i + "' class='square color" + board.boardSquares[i].color + "'>" + board.boardSquares[i].location.rank + ", " + board.boardSquares[i].location.file + "</div>");
+                    }
+
+                    $(document).on("click", ".square", function(){
+                        $("#Board > div").removeClass("selected");
+                        $(this).toggleClass("selected");
+                    });
+                });
+            });
+        });
     </script>
 }

@@ -2,11 +2,11 @@ using System.Collections.Generic;
 
 namespace ChessWithCohorts.Models
 {
-    public class King : ChessPiece
+    public class Pawn : ChessPiece
     {
-        public King(PieceColor color) : base(color)
+        public Pawn(PieceColor color) : base(color)
         {
-            this.Type = ChessPieceType.King;
+            this.Type = ChessPieceType.Pawn;
         }
 
         public override List<Location> GetValidMoves(ChessBoard board)
@@ -18,11 +18,5 @@ namespace ChessWithCohorts.Models
         {
             return null;
         }
-        
-
-        // public override IEnumerable<Move> GetValidMoves(ChessBoard board)
-        // {
-        //     return ChessMoveUtilities.GetMoves(board, this, 1, MoveTemplates);
-        // }
     }
 }

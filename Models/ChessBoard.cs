@@ -1,45 +1,57 @@
+using System.Collections.Generic;
+using System;
+
 namespace ChessWithCohorts.Models
 {
     public class ChessBoard
     {
-        private const int MAX_RANK_SIZE = 8;
-        private const int MAX_FILE_SIZE = 8;
+        private const int BOARD_SIZE = 8;
+        private Dictionary<Location, Square> SquareMap;
         public int Size
         {
-            get => MAX_FILE_SIZE;
+            get => BOARD_SIZE;
         }
 
-        private Square[,] squares = new Square[MAX_RANK_SIZE, MAX_FILE_SIZE];
+        private Square[,] squares = new Square[BOARD_SIZE, BOARD_SIZE];
 
-        public Square[,] Squares
+        public Square[,] BoardSquares
         {
             get => squares;
         }
 
         public ChessBoard()
         {
-            for (int i=0; i < MAX_RANK_SIZE; i++)
+            SquareMap = new Dictionary<Location,Square>();
+
+            for (int i=0; i < BOARD_SIZE; i++)
             {
-                for (int j=0; j < MAX_FILE_SIZE; j++)
+                int column = 0;
+                SquareColor CurrentColor = (i % 2 == 0) ? SquareColor.LIGHT : SquareColor.DARK;
+                foreach (File f in Enum.GetValues(typeof(File)))
                 {
-                    squares[i,j] = new Square(i, j);
+                    Square NewSquare = new Square(new Location(f, BOARD_SIZE - i), CurrentColor);
+                    SquareMap.Add(NewSquare.Location, NewSquare);
+                    squares[i,column] = NewSquare;
+                    Console.WriteLine($"{NewSquare.Location.File}, {NewSquare.Location.Rank} - {NewSquare.Color} : {i},{column}");
+                    CurrentColor = (CurrentColor == SquareColor.DARK) ? SquareColor.LIGHT : SquareColor.DARK;
+                    column++;
                 }
             }
         }
 
-        public void MoveChessPiece(IChessPiece piece, Move move)
-        {
-            foreach (Square s in squares)
-            {
-                if (s.Rank == move.EndingLocation.Rank && s.File == move.EndingLocation.File)
-                {
-                    if (s.CurrentPiece == null)
-                    {
-                        s.CurrentPiece = move.Piece;
-                        piece.CurrentLocation = move.EndingLocation;
-                    }
-                }
-            }
-        }
+        // public void MoveChessPiece(IChessPiece piece, Move move)
+        // {
+        //     foreach (Square s in squares)
+        //     {
+        //         if (s.Rank == move.EndingLocation.Rank && s.File == move.EndingLocation.File)
+        //         {
+        //             if (s.CurrentPiece == null)
+        //             {
+        //                 s.CurrentPiece = move.Piece;
+        //                 piece.CurrentLocation = move.EndingLocation;
+        //             }
+        //         }
+        //     }
+        // }
     }
 }

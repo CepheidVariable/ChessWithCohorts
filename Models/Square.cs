@@ -4,26 +4,23 @@ namespace ChessWithCohorts.Models
 {
     public class Square
     {
-        private const int BoardSize = 7;
+        // private readonly int BoardSize = 8;
+        public SquareColor Color {get; private set;}
+        public Location Location {get; private set;}
+        public ChessPiece CurrentPiece {get; set;} = null;
+        public bool isOccupied {get; private set;} = false;
 
-        private static bool IsInRange(int pos)
+
+        public Square(Location location, SquareColor color)
         {
-            return (pos >= 0) && (pos <= BoardSize);
+            this.Location = location;
+            this.Color = color;
         }
 
-        public Square(int rank, int file)
+        public void Reset()
         {
-            if(!IsInRange(rank))
-                throw new ArgumentOutOfRangeException("rank");
-            if(!IsInRange(file))
-                throw new ArgumentOutOfRangeException("file");
-
-            Rank = rank;
-            File = file;
+            this.isOccupied = false;
+            this.CurrentPiece = null;
         }
-
-        public int Rank {get; set;}
-        public int File {get; set;}
-        public IChessPiece CurrentPiece {get; set;}
     }
 }
