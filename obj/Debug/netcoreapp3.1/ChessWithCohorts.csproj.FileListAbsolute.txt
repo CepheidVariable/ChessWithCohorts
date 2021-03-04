@@ -127,3 +127,4 @@ D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debu
 D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\Tutorial.cshtml.g.cs
 D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Login.cshtml.g.cs
 D:\Users\Cepheid Variable\Documents\codingDojo\c_sharp\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Register.cshtml.g.cs
+C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\Tutorial.cshtml.g.cs

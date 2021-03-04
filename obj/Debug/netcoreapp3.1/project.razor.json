@@ -14390,6 +14390,67 @@
     "CSharpLanguageVersion": 800
   },
   "RootNamespace": "ChessWithCohorts",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\_Login.cshtml",
+      "TargetPath": "Views\\Home\\_Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\Tutorial.cshtml",
+      "TargetPath": "Views\\Home\\Tutorial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\LoginPage.cshtml",
+      "TargetPath": "Views\\Home\\LoginPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\Dashboard.cshtml",
+      "TargetPath": "Views\\Home\\Dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\_Register.cshtml",
+      "TargetPath": "Views\\Home\\_Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
