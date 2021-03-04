@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace ChessWithCohorts.Models
 {
@@ -10,6 +12,12 @@ namespace ChessWithCohorts.Models
         public int Size
         {
             get => BOARD_SIZE;
+        }
+
+        [JsonIgnore]
+        public Dictionary<Location, Square> Map
+        {
+            get => SquareMap;
         }
 
         private Square[,] squares = new Square[BOARD_SIZE, BOARD_SIZE];
