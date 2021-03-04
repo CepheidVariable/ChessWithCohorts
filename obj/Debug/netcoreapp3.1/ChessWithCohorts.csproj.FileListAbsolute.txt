@@ -81,7 +81,6 @@ C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\ob
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\ChessWithCohorts.RazorCoreGenerate.cache
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\Dashboard.cshtml.g.cs
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\IndexJson.cshtml.g.cs
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Login.cshtml.g.cs
 C:\Users\wadle\OneDrive\development\codingdojo\Dojo_projects\ChessWithCohorts\obj\Debug\netcoreapp3.1\Razor\Views\Home\_Register.cshtml.g.cs

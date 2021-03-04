@@ -14392,11 +14392,6 @@
   "RootNamespace": "ChessWithCohorts",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\IndexJson.cshtml",
-      "TargetPath": "Views\\Home\\IndexJson.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\wadle\\OneDrive\\development\\codingdojo\\Dojo_projects\\ChessWithCohorts\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
