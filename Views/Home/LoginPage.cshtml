@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex flex-column align-items-center rounded">
+    @if(ViewBag.LoginMessage != null)
+    {
+        <p class="alert alert-success mb-2">@ViewBag.LoginMessage</p>
+    }
+    <h1 class="display-4">Register or Login to Access Your Account</h1>
+    <div class="w-100 d-flex flex-wrap justify-content-around mt-5">
+
+        <partial name="_Register" />
+
+        <partial name="_Login" />
+
+    </div>
+</div>

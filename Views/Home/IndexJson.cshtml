@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model King
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>@Model.IsDestroyed</p>
+</div>
+
+@section Scripts{
+    <script>
+        if (document.readyState === 'complete') {
+            // The page is fully loaded
+            
+        }
+
+    </script>
+}

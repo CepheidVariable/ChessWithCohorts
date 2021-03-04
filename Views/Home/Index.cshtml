@@ -1,18 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model King
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>@Model.IsDestroyed</p>
+
+<div class="d-flex flex-column align-items-center text-center">
+    @if(ViewBag.LoginMessage != null)
+    {
+        <p class="alert alert-success mb-2">@ViewBag.LoginMessage</p>
+    }
+
+    <h1 class="display-4">Welcome to Chess for Cohorts!</h1>
+    <p class="lead">Please login to access this site.</p>
+    <p class="lead">Thank You!</p>
+    <a asp-action="LoginPage" class="btn btn-dark mt-3">Let's Go!</a>
 </div>
-
-@section Scripts{
-    <script>
-        if (document.readyState === 'complete') {
-            // The page is fully loaded
-            
-        }
-
-    </script>
-}

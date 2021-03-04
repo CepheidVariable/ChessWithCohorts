@@ -20,7 +20,7 @@ namespace ChessWithCohorts.Models
             //     location = new Square(newRank, newFile);
             // else
             //     CapturePiece()
-            // return true;
+            return true;
         }
 
         internal static IEnumerable<Move> GetMoves(ChessBoard board, IChessPiece piece, int range, IEnumerable<int[]> mults)
