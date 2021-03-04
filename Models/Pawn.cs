@@ -16,18 +16,23 @@ namespace ChessWithCohorts.Models
         public override List<Location> GetValidMoves(ChessBoard board)
         {
             List<Location> PossibleMoves = new List<Location>();
-            Location l = this.CurrentSquare.Location;
+            Location l = this.CurrentLocation;
+            int direction = 0;
+            if (this.Color == PieceColor.WHITE)
+                direction = 1;
+            else
+                direction = -1;
 
             // first move
             if (IsFirstMove)
-                PossibleMoves.Add(LocationFactory.Build(l, 0, 2));
+                PossibleMoves.Add(LocationFactory.Build(l, 0, 2*direction));
 
             // normal move
-            PossibleMoves.Add(LocationFactory.Build(l, 0, 1));
+            PossibleMoves.Add(LocationFactory.Build(l, 0, 1*direction));
 
             // capturing moves
-            PossibleMoves.Add(LocationFactory.Build(l, 1, 1));
-            PossibleMoves.Add(LocationFactory.Build(l, -1, 1));
+            PossibleMoves.Add(LocationFactory.Build(l, 1*direction, 1*direction));
+            PossibleMoves.Add(LocationFactory.Build(l, -1*direction, 1*direction));
 
             PossibleMoves.RemoveAll(n => n == null);
 
@@ -55,7 +60,7 @@ namespace ChessWithCohorts.Models
             }).ToList();
         }
 
-        public override List<Location> GetValidMoves(ChessBoard board, Square square)
+        public override List<Location> GetValidMoves(ChessBoard board, Location current)
         {
             return null;
         }

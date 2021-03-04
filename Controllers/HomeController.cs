@@ -198,23 +198,26 @@ namespace ChessWithCohorts.Controllers
         public IActionResult TestJson()
         {
             ChessBoard NewBoard = new ChessBoard();
-            Pawn NewPawn = new Pawn(PieceColor.WHITE);
-            Pawn BlackPawn = new Pawn(PieceColor.BLACK);
-            Rook WRook = new Rook(PieceColor.WHITE);
-            WRook.CurrentSquare = NewBoard.BoardSquares[4,4];
-            NewBoard.BoardSquares[5,4].CurrentPiece = NewPawn;
-            NewBoard.BoardSquares[5,4].IsOccupied = true;
+            Pawn PawnW1 = new Pawn(PieceColor.WHITE);
+            Pawn PawnB1 = new Pawn(PieceColor.BLACK);
+            Rook RookW1 = new Rook(PieceColor.WHITE);
+            NewBoard.PlacePiece(PawnW1, new Location(GameFile.e, 2));
+            NewBoard.PlacePiece(PawnB1, new Location(GameFile.d, 3));
+            NewBoard.PlacePiece(RookW1, new Location(GameFile.e, 3));
+            List<Location> RookW1Moves = RookW1.GetValidMoves(NewBoard);
+            List<Location> PawnW1Moves = PawnW1.GetValidMoves(NewBoard);
+            List<Location> PawnB1Moves = PawnB1.GetValidMoves(NewBoard);
 
-
-            NewBoard.BoardSquares[4,3].CurrentPiece = BlackPawn;
-            NewBoard.BoardSquares[4,3].IsOccupied = true;
-            List<Location> RookMoves = WRook.GetValidMoves(NewBoard);
+            
 
             var result = new{
-                whitePawn = NewPawn,
-                blackPawn = BlackPawn,
-                whiterook = WRook,
-                rookmoves = RookMoves,
+                whitePawn = PawnW1,
+                blackPawn = PawnB1,
+                whiterook = RookW1,
+                rookmoves = RookW1Moves,
+                wpawnmoves = PawnW1Moves,
+                bpawnmoves = PawnB1Moves,
+                board = NewBoard
             };
             return Json(result);
         }

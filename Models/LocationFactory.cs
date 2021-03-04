@@ -6,7 +6,7 @@ namespace ChessWithCohorts.Models
 {
     public class LocationFactory
     {
-        private static int[] files = Enum.GetValues(typeof(File))
+        private static int[] files = Enum.GetValues(typeof(GameFile))
             .Cast<int>()
             .ToArray();
 
@@ -18,7 +18,7 @@ namespace ChessWithCohorts.Models
             if (current.Rank + rankOffset < 1 || current.Rank + rankOffset > 8)
                 return null;
             Console.WriteLine($"{currentFile} + {fileOffset} = {currentFile + fileOffset} | {current.Rank} + {rankOffset} = {current.Rank + rankOffset}");
-            return new Location((File) files[currentFile + fileOffset], current.Rank + rankOffset);
+            return new Location((GameFile) files[currentFile + fileOffset], current.Rank + rankOffset);
         }
     }
 }

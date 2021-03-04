@@ -5,7 +5,7 @@ namespace ChessWithCohorts.Models
     public interface IMovable
     {
         List<Location> GetValidMoves(ChessBoard board);
-        List<Location> GetValidMoves(ChessBoard board, Square square);
-        void MakeMove(Square square);
+        List<Location> GetValidMoves(ChessBoard board, Location current);
+        void MakeMove(Location newLocation, ChessBoard board);
     }
 }

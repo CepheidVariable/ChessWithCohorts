@@ -1,6 +1,6 @@
 namespace ChessWithCohorts.Models
 {
-    public enum File
+    public enum GameFile
     {
         a, b, c, d, e, f, g, h
     }
