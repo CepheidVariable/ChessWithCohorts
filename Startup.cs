@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;			        //Session
+using Microsoft.EntityFrameworkCore;			    //Enable entity
+using ChessWithCohorts.Models;    
+using ChessWithCohorts.Contexts;
 
 namespace ChessWithCohorts
 {
@@ -22,6 +26,8 @@ namespace ChessWithCohorts
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
+            services.AddDbContext<MyContext>(o => o.UseMySql (Configuration["DBInfo:ConnectionString"]));
             services.AddControllersWithViews();
         }
 
@@ -30,12 +36,15 @@ namespace ChessWithCohorts
         {
             if (env.IsDevelopment())
             {
+                
                 app.UseDeveloperExceptionPage();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseSession();
+
             app.UseStaticFiles();
 
             app.UseRouting();
