@@ -190,11 +190,62 @@ namespace ChessWithCohorts.Controllers
         [HttpGet("create/pawn/{boardstate}")]
         public IActionResult PracticePawn(ChessBoard boardstate)
         {
-            boardstate.PlacePiece(new Pawn(PieceColor.WHITE), new Location(GameFile.e,2));
+            Pawn NewPawn = new Pawn(PieceColor.WHITE);
+            Pawn BlackPawn = new Pawn(PieceColor.BLACK);
+            // Rook WhiteRook = new Rook(PieceColor.WHITE);
+            // boardstate.PlacePiece(WhiteRook, new Location(GameFile.e, 3));
+            boardstate.PlacePiece(NewPawn, new Location(GameFile.e,2));
+            boardstate.PlacePiece(BlackPawn, new Location(GameFile.d, 3));
+            List<Location> MoveSet = NewPawn.GetValidMoves(boardstate);
             var result = new {
-                board = boardstate
+                board = boardstate,
+                moves = MoveSet
             };
             
+            return Json(result);
+        }
+
+        [HttpGet("create/rook/{boardstate}")]
+        public IActionResult PracticeRook(ChessBoard boardstate)
+        {
+            // Pawn NewPawn = new Pawn(PieceColor.WHITE);
+            // Pawn BlackPawn = new Pawn(PieceColor.BLACK);
+            Rook WhiteRook = new Rook(PieceColor.WHITE);
+            boardstate.PlacePiece(WhiteRook, new Location(GameFile.e, 5));
+            // boardstate.PlacePiece(NewPawn, new Location(GameFile.e,2));
+            // boardstate.PlacePiece(BlackPawn, new Location(GameFile.d, 3));
+            List<Location> MoveSet = WhiteRook.GetValidMoves(boardstate);
+            var result = new {
+                board = boardstate,
+                moves = MoveSet
+            };
+            
+            return Json(result);
+        }
+
+
+        [HttpGet("get/moves/{piececolor}/{l}/{board}")]
+        public IActionResult GetMoves(int piececolor, string l, ChessBoard board)
+        {
+            // foreach (KeyValuePair<Location, Square> p in board.Map)
+            // {
+            //     Console.WriteLine(p.Value.CurrentPiece);
+            // }
+            // List<Location> MoveSet = piece.GetValidMoves(board);
+            Console.WriteLine(piececolor);
+            Console.WriteLine(l);
+            Console.WriteLine(board);
+            // string test = location.ToString();
+            // Console.WriteLine(location[1]);
+
+            // Pawn NewPawn = new Pawn((PieceColor)piececolor);
+            // NewPawn.CurrentLocation = location;
+            // List<Location> MoveSet = NewPawn.GetValidMoves(board);
+
+            var result = new {
+                moves = "MoveSet"
+            };
+
             return Json(result);
         }
 

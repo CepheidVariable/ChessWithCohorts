@@ -17,6 +17,7 @@ namespace ChessWithCohorts.Models
         {
             List<Location> PossibleMoves = new List<Location>();
             Location l = this.CurrentLocation;
+            Console.WriteLine(l.File);
             int direction = 0;
             if (this.Color == PieceColor.WHITE)
                 direction = 1;
@@ -33,7 +34,7 @@ namespace ChessWithCohorts.Models
             // capturing moves
             PossibleMoves.Add(LocationFactory.Build(l, 1*direction, 1*direction));
             PossibleMoves.Add(LocationFactory.Build(l, -1*direction, 1*direction));
-
+            Console.WriteLine(PossibleMoves.Count);
             PossibleMoves.RemoveAll(n => n == null);
 
             // Moves based on board dimensions
@@ -49,9 +50,21 @@ namespace ChessWithCohorts.Models
             }
 
             // Moves based on board condition
+            List<Location> OccupiedFileMoves = ValidMoves.Where(m => m.File == l.File && board.Map[m].IsOccupied).ToList();
+
             return ValidMoves.Where(m => {
-                if ((m.File == l.File) && (board.Map[m].IsOccupied))
-                    return false;
+                if (m.File == l.File)
+                {
+                    foreach (Location f in OccupiedFileMoves)
+                    {
+                        if (m.File == f.File && m.Rank > f.Rank)
+                            return false;
+                    }
+                    if (board.Map[m].IsOccupied)
+                        return false;
+                }
+                // else if ((m.File == l.File) && (board.Map[m].IsOccupied))
+                //     return false;
                 else if ((m.File != l.File) && (board.Map[m].IsOccupied))
                     return !(board.Map[m].CurrentPiece.Color == this.Color);
                 else if ((m.File != l.File) && !(board.Map[m].IsOccupied))

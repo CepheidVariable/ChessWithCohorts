@@ -10,13 +10,17 @@
 
     <h1 class="display-4">Learn to Move!</h1>
     <p class="lead">Please select a piece to practice.</p>
-    <div id="PracticePawn" style="background-image: url(/images/05.png);width:100px; height: 100px;" class="square"></div>
+    <div id="Selections" class="d-flex flex-wrap">
+        <div id="PracticePawn" style="background-image: url(/images/05.png);width:100px; height: 100px;" class="practice"></div>
+        <div id="PracticeRook" style="background-image: url(/images/02.png);width:100px; height: 100px;" class="practice"></div>
+    </div>
     <a id="ResetBoard" href="#" class="btn btn-dark col-2">Reset Board</a>
     <div id="Board" class="d-flex flex-wrap mt-4"></div></div>
 
 @section Scripts{
     <script>
         var gameBoard = {};
+        var moveset = {};
         function getBoard(){
             $.get("@Url.Action("CreateBoard")",null, function (data) {
                 constructBoard(data.board);
@@ -41,26 +45,71 @@
                     $("#F"+ file +"R"+ rank).attr("style", "background-image: url("+piece+");");
             }
         }
+        function saveMoves(e){
+            moveset = e;
+            console.log(moveset);
+        }
+        function showMoves(id) {
+            // get square id from param
+            // loop through board squares to match
+            // check if occupied
+            // send ajax call with piece to server to return moveset
+            var location = id.replace(/\D/g,'');
+
+            gameBoard.boardSquares.forEach(s => {
+                // console.log(s.location.file == location[0]);
+                if(s.location.file == location[0] && s.location.rank == location[1]){
+                    console.log("match");
+                    if(s.isOccupied){
+                        console.log("occupied", s.currentPiece);
+                        // $.get("@Url.Action("GetMoves", new {piececolor ="+ s.currentPiece.color +", l = " + location + ", board ="+ gameBoard +"})",null, function (data) {
+                        //     console.log(data.moves);
+                        // });
+                        moveset.forEach(m => {
+                            let sid = "#F" + m.file + "R" + m.rank;
+                            console.log(m.file, m.rank, sid);
+
+                            $(sid).toggleClass("movable");
+                        });
+                    }
+                }
+            });
+            
+            
+        }
 
         $(document).ready(function() {
             var x = false;
+            var y = false;
             // generate board
             getBoard();
 
             $(document).on("click", ".square", function(){
                 if($(this).hasClass("selected")){
-                    $(this).removeClass("selected");
+                    $("#Board > div").removeClass("selected");
+                    $("#Board > div").removeClass("movable");
                 }else{
+                    showMoves($(this).attr("id"));
                     $("#Board > div").removeClass("selected");
                     $(this).toggleClass("selected");
                 }
                 printResponse();
             });
 
+            $(document).on("click", ".practice", function(){
+                if($(this).hasClass("selected")){
+                    $("#Selections > div").removeClass("selected");
+                }else{
+                    $("#Selections > div").removeClass("selected");
+                    $(this).toggleClass("selected");
+                }
+            });
+
             $("#PracticePawn").click(function() {
                 if (!x){
                     $.get("@Url.Action("PracticePawn", new {boardstate ="+ gameBoard +"})",null, function (data) {
                         $("#Board").html("");
+                        saveMoves(data.moves);
                         constructBoard(data.board);
                         // console.log(data);
                     });
@@ -69,6 +118,22 @@
                     $("#Board").html("");
                     getBoard();
                     x = false;
+                }
+            });
+
+            $("#PracticeRook").click(function() {
+                if (!y){
+                    $.get("@Url.Action("PracticeRook", new {boardstate ="+ gameBoard +"})",null, function (data) {
+                        $("#Board").html("");
+                        saveMoves(data.moves);
+                        constructBoard(data.board);
+                        // console.log(data);
+                    });
+                    y = true;
+                } else{
+                    $("#Board").html("");
+                    getBoard();
+                    y = false;
                 }
             });
 

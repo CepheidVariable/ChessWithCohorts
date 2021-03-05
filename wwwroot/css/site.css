@@ -70,7 +70,6 @@ body {
   width: 80px;
   height: 80px;
   text-align: center;
-  /* padding: 1rem 0; */
   background-position: center;
   background-size:50px;
   background-repeat:no-repeat;  
@@ -79,6 +78,21 @@ body {
   border:3px solid rgb(241, 217, 18);
 }
 .square.selected{
+  background-color: rgba(241, 217, 18, 0.6);  
+}
+.square.movable{
+  background-color: rgba(241, 217, 18, 0.6);
+}
+.practice{
+  text-align: center;
+  background-position: center;
+  background-size:50px;
+  background-repeat:no-repeat;
+}
+.practice:hover{
+  border:3px solid rgb(241, 217, 18);
+}
+.practice.selected{
   background-color: rgba(241, 217, 18, 0.6);  
 }
 .color0{
