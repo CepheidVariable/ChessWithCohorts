@@ -48,8 +48,12 @@
             getBoard();
 
             $(document).on("click", ".square", function(){
-                $("#Board > div").removeClass("selected");
-                $(this).toggleClass("selected");
+                if($(this).hasClass("selected")){
+                    $(this).removeClass("selected");
+                }else{
+                    $("#Board > div").removeClass("selected");
+                    $(this).toggleClass("selected");
+                }
                 printResponse();
             });
 
