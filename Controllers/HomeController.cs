@@ -183,7 +183,18 @@ namespace ChessWithCohorts.Controllers
             var result = new {
                 board = NewBoard
             };
-            // Console.WriteLine($"{NewBoard.BoardSquares[0,3].Location.File}, {NewBoard.BoardSquares[0,3].Location.Rank}\n{NewBoard.BoardSquares[1,3].Location.File}, {NewBoard.BoardSquares[1,3].Location.Rank}");
+
+            return Json(result);
+        }
+
+        [HttpGet("create/pawn/{boardstate}")]
+        public IActionResult PracticePawn(ChessBoard boardstate)
+        {
+            boardstate.PlacePiece(new Pawn(PieceColor.WHITE), new Location(GameFile.e,2));
+            var result = new {
+                board = boardstate
+            };
+            
             return Json(result);
         }
 
@@ -208,7 +219,7 @@ namespace ChessWithCohorts.Controllers
             List<Location> PawnW1Moves = PawnW1.GetValidMoves(NewBoard);
             List<Location> PawnB1Moves = PawnB1.GetValidMoves(NewBoard);
 
-            
+
 
             var result = new{
                 whitePawn = PawnW1,
