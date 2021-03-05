@@ -35,7 +35,7 @@ namespace ChessWithCohorts.Models
             {
                 int column = 0;
                 SquareColor CurrentColor = (i % 2 == 0) ? SquareColor.LIGHT : SquareColor.DARK;
-                foreach (File f in Enum.GetValues(typeof(File)))
+                foreach (GameFile f in Enum.GetValues(typeof(GameFile)))
                 {
                     Square NewSquare = new Square(new Location(f, BOARD_SIZE - i), CurrentColor);
                     SquareMap.Add(NewSquare.Location, NewSquare);
@@ -43,6 +43,20 @@ namespace ChessWithCohorts.Models
                     Console.WriteLine($"{NewSquare.Location.File}, {NewSquare.Location.Rank} - {NewSquare.Color} : {i},{column}");
                     CurrentColor = (CurrentColor == SquareColor.DARK) ? SquareColor.LIGHT : SquareColor.DARK;
                     column++;
+                }
+            }
+        }
+
+        public void PlacePiece(ChessPiece piece, Location location)
+        {
+            foreach(KeyValuePair<Location, Square> s in this.Map)
+            {
+                if (location.Equals(s.Key))
+                {
+                    Console.WriteLine($"Placed: {piece.Color} {piece.Type}");
+                    s.Value.CurrentPiece = piece;
+                    s.Value.IsOccupied = true;
+                    piece.CurrentLocation = s.Value.Location;
                 }
             }
         }

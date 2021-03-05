@@ -5,10 +5,10 @@ namespace ChessWithCohorts.Models
 {
     public class Location
     {
-        public File File {get; private set;}
+        public GameFile File {get; private set;}
         public int Rank {get; private set;}
 
-        public Location(File file, int rank)
+        public Location(GameFile file, int rank)
         {
             this.File = file;
             this.Rank = rank;

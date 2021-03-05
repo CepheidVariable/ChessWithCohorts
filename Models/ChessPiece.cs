@@ -7,7 +7,7 @@ namespace ChessWithCohorts.Models
     {
         public ChessPieceType Type {get; protected set;}
         public PieceColor Color {get; protected set;}
-        public Square CurrentSquare {get; set;}
+        public Location CurrentLocation {get; set;}
         public bool IsDestroyed {get; set;} = false;
 
         public ChessPiece(PieceColor color)
@@ -17,13 +17,16 @@ namespace ChessWithCohorts.Models
 
         public virtual List<Location> GetValidMoves(ChessBoard board) {return null;}
 
-        public virtual List<Location> GetValidMoves(ChessBoard board, Square square) {return null;}
+        public virtual List<Location> GetValidMoves(ChessBoard board, Location current) {return null;}
 
-        public void MakeMove(Square newSquare)
+        public void MakeMove(Location newLocation, ChessBoard board)
         {
-            Square current = this.CurrentSquare;
-            this.CurrentSquare = newSquare;
-            current.Reset();
+            foreach(KeyValuePair<Location, Square> s in board.Map)
+            {
+                if (this.CurrentLocation.Equals(s))
+                    s.Value.Reset();
+            }
+            this.CurrentLocation = newLocation;
         }
     }
 }

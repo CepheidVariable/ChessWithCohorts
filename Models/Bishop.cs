@@ -14,7 +14,7 @@ namespace ChessWithCohorts.Models
             return null;
         }
 
-        public override List<Location> GetValidMoves(ChessBoard board, Square square)
+        public override List<Location> GetValidMoves(ChessBoard board, Location current)
         {
             return null;
         }

@@ -14,7 +14,7 @@ namespace ChessWithCohorts.Models
         {
             List<Location> PossibleMoves = new List<Location>();
             Dictionary<Location, Square> Map = board.Map;
-            Location l = this.CurrentSquare.Location;
+            Location l = this.CurrentLocation;
             FileCandidate(PossibleMoves, Map, l, -1);
             FileCandidate(PossibleMoves, Map, l, 1);
             RankCandidate(PossibleMoves, Map, l, -1);
@@ -70,6 +70,9 @@ namespace ChessWithCohorts.Models
                     if (Map[m.Key].IsOccupied)
                     {
                         Console.WriteLine("hit piece");
+                        // Console.WriteLine($"{m}, {m.Key}");
+                        // Console.WriteLine($"{Map[m.Key].IsOccupied}, {Map[m.Key].CurrentPiece}");
+                        // Console.WriteLine($"{this.Color}");
                         if (Map[m.Key].CurrentPiece.Color == this.Color)
                             break;
                         PossibleMoves.Add(next);
@@ -83,7 +86,7 @@ namespace ChessWithCohorts.Models
             }
         }
 
-        public override List<Location> GetValidMoves(ChessBoard board, Square square)
+        public override List<Location> GetValidMoves(ChessBoard board, Location current)
         {
             return null;
         }

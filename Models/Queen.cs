@@ -23,12 +23,12 @@ namespace ChessWithCohorts.Models
         public override List<Location> GetValidMoves(ChessBoard board)
         {
             List<Location> PossibleMoves = new List<Location>();
-            PossibleMoves.AddRange(Bishop.GetValidMoves(board, this.CurrentSquare));
-            PossibleMoves.AddRange(Rook.GetValidMoves(board, this.CurrentSquare));
+            PossibleMoves.AddRange(Bishop.GetValidMoves(board, this.CurrentLocation));
+            PossibleMoves.AddRange(Rook.GetValidMoves(board, this.CurrentLocation));
             return PossibleMoves;
         }
         
-        public override List<Location> GetValidMoves(ChessBoard board, Square square)
+        public override List<Location> GetValidMoves(ChessBoard board, Location current)
         {
             return null;
         }
