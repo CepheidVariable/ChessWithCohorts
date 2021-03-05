@@ -211,9 +211,11 @@ namespace ChessWithCohorts.Controllers
             // Pawn NewPawn = new Pawn(PieceColor.WHITE);
             // Pawn BlackPawn = new Pawn(PieceColor.BLACK);
             Rook WhiteRook = new Rook(PieceColor.WHITE);
-            boardstate.PlacePiece(WhiteRook, new Location(GameFile.e, 5));
-            // boardstate.PlacePiece(NewPawn, new Location(GameFile.e,2));
-            // boardstate.PlacePiece(BlackPawn, new Location(GameFile.d, 3));
+            boardstate.PlacePiece(WhiteRook, new Location(GameFile.c, 6));
+            // boardstate.PlacePiece(NewPawn, new Location(GameFile.c,2));
+            // boardstate.PlacePiece(BlackPawn, new Location(GameFile.g, 6));
+            
+            WhiteRook.MakeMove(new Location(GameFile.c, 4), boardstate);
             List<Location> MoveSet = WhiteRook.GetValidMoves(boardstate);
             var result = new {
                 board = boardstate,

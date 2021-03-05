@@ -49,31 +49,24 @@ namespace ChessWithCohorts.Models
 
         public void PlacePiece(ChessPiece piece, Location location)
         {
+            // Console.WriteLine(piece);
+            // Square PrevSquare = new Square();
             foreach(KeyValuePair<Location, Square> s in this.Map)
             {
+                // Console.WriteLine(piece.CurrentLocation);
+                // if (piece.CurrentLocation.Equals(s.Key))
+                //     PrevSquare = s.Value;
+
                 if (location.Equals(s.Key))
                 {
                     Console.WriteLine($"Placed: {piece.Color} {piece.Type}");
                     s.Value.CurrentPiece = piece;
                     s.Value.IsOccupied = true;
                     piece.CurrentLocation = s.Value.Location;
+                    // Console.WriteLine(piece.CurrentLocation.File);
+                    // PrevSquare.Reset();
                 }
             }
         }
-
-        // public void MoveChessPiece(IChessPiece piece, Move move)
-        // {
-        //     foreach (Square s in squares)
-        //     {
-        //         if (s.Rank == move.EndingLocation.Rank && s.File == move.EndingLocation.File)
-        //         {
-        //             if (s.CurrentPiece == null)
-        //             {
-        //                 s.CurrentPiece = move.Piece;
-        //                 piece.CurrentLocation = move.EndingLocation;
-        //             }
-        //         }
-        //     }
-        // }
     }
 }

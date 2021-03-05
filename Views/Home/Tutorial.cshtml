@@ -16,13 +16,9 @@
     </div>
     <a id="ResetBoard" href="#" class="btn btn-dark col-2">Reset Board</a>
     <div id="Board" class="d-flex flex-wrap mt-4"></div></div>
-@Url.Action("dsfd", new {soemthing= ""});
+
 @section Scripts{
     <script>
-        var somestring = "test";
-        var another = 5;
-        var teststring = "combine somestring:" + somestring + "with snother:" + another;
-        console.log(teststring);
         var gameBoard = {};
         var moveset = {};
         function getBoard(){
@@ -142,6 +138,7 @@
             });
 
             $(document).on( "click", "#ResetBoard", function() {
+                $("#Selections > div").removeClass("selected");
                 $("#Board").html("");
                 getBoard();
             });

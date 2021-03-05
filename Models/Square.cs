@@ -10,6 +10,7 @@ namespace ChessWithCohorts.Models
         public ChessPiece CurrentPiece {get; set;} = null;
         public bool IsOccupied {get; set;} = false;
 
+        public Square(){}
 
         public Square(Location location, SquareColor color)
         {

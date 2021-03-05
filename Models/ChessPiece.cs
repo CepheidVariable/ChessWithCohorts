@@ -21,12 +21,16 @@ namespace ChessWithCohorts.Models
 
         public void MakeMove(Location newLocation, ChessBoard board)
         {
-            foreach(KeyValuePair<Location, Square> s in board.Map)
+            List<Location> Moves = this.GetValidMoves(board);
+            
+            foreach(Location l in Moves)
             {
-                if (this.CurrentLocation.Equals(s))
-                    s.Value.Reset();
+                if (l.Equals(newLocation))
+                {
+                    Console.WriteLine("found");
+                    board.PlacePiece(this, newLocation);
+                }
             }
-            this.CurrentLocation = newLocation;
         }
     }
 }

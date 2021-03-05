@@ -14,9 +14,9 @@ namespace ChessWithCohorts.Models
         {
             int currentFile = (int) current.File;
             if (currentFile + fileOffset < 0 || currentFile + fileOffset > 7)
-                return null; //return bogus location if out of bounds
+                return null;    //out of bounds
             if (current.Rank + rankOffset < 1 || current.Rank + rankOffset > 8)
-                return null;
+                return null;    //out of bounds
             Console.WriteLine($"{currentFile} + {fileOffset} = {currentFile + fileOffset} | {current.Rank} + {rankOffset} = {current.Rank + rankOffset}");
             return new Location((GameFile) files[currentFile + fileOffset], current.Rank + rankOffset);
         }
