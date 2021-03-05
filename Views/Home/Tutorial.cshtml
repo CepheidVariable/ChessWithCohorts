@@ -16,9 +16,13 @@
     </div>
     <a id="ResetBoard" href="#" class="btn btn-dark col-2">Reset Board</a>
     <div id="Board" class="d-flex flex-wrap mt-4"></div></div>
-
+@Url.Action("dsfd", new {soemthing= ""});
 @section Scripts{
     <script>
+        var somestring = "test";
+        var another = 5;
+        var teststring = "combine somestring:" + somestring + "with snother:" + another;
+        console.log(teststring);
         var gameBoard = {};
         var moveset = {};
         function getBoard(){
@@ -61,21 +65,19 @@
                 if(s.location.file == location[0] && s.location.rank == location[1]){
                     console.log("match");
                     if(s.isOccupied){
-                        console.log("occupied", s.currentPiece);
+                        // console.log("occupied", s.currentPiece, location);
                         // $.get("@Url.Action("GetMoves", new {piececolor ="+ s.currentPiece.color +", l = " + location + ", board ="+ gameBoard +"})",null, function (data) {
                         //     console.log(data.moves);
                         // });
+
                         moveset.forEach(m => {
                             let sid = "#F" + m.file + "R" + m.rank;
                             console.log(m.file, m.rank, sid);
-
                             $(sid).toggleClass("movable");
                         });
                     }
                 }
             });
-            
-            
         }
 
         $(document).ready(function() {
@@ -96,22 +98,18 @@
                 printResponse();
             });
 
-            $(document).on("click", ".practice", function(){
+            $("#PracticePawn").click(function() {
                 if($(this).hasClass("selected")){
                     $("#Selections > div").removeClass("selected");
                 }else{
                     $("#Selections > div").removeClass("selected");
                     $(this).toggleClass("selected");
                 }
-            });
-
-            $("#PracticePawn").click(function() {
                 if (!x){
                     $.get("@Url.Action("PracticePawn", new {boardstate ="+ gameBoard +"})",null, function (data) {
                         $("#Board").html("");
                         saveMoves(data.moves);
                         constructBoard(data.board);
-                        // console.log(data);
                     });
                     x = true;
                 } else{
@@ -122,12 +120,18 @@
             });
 
             $("#PracticeRook").click(function() {
+                if($(this).hasClass("selected")){
+                    $("#Selections > div").removeClass("selected");
+                }else{
+                    $("#Selections > div").removeClass("selected");
+                    $(this).toggleClass("selected");
+                }
+
                 if (!y){
                     $.get("@Url.Action("PracticeRook", new {boardstate ="+ gameBoard +"})",null, function (data) {
                         $("#Board").html("");
                         saveMoves(data.moves);
                         constructBoard(data.board);
-                        // console.log(data);
                     });
                     y = true;
                 } else{

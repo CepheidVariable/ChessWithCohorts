@@ -63,8 +63,6 @@ namespace ChessWithCohorts.Models
                     if (board.Map[m].IsOccupied)
                         return false;
                 }
-                // else if ((m.File == l.File) && (board.Map[m].IsOccupied))
-                //     return false;
                 else if ((m.File != l.File) && (board.Map[m].IsOccupied))
                     return !(board.Map[m].CurrentPiece.Color == this.Color);
                 else if ((m.File != l.File) && !(board.Map[m].IsOccupied))

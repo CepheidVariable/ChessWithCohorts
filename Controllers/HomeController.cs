@@ -223,7 +223,7 @@ namespace ChessWithCohorts.Controllers
             return Json(result);
         }
 
-
+        //not working; cannot get parameter l to pass variable information
         [HttpGet("get/moves/{piececolor}/{l}/{board}")]
         public IActionResult GetMoves(int piececolor, string l, ChessBoard board)
         {
